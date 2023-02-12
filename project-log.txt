@@ -1,0 +1,18 @@
+Week1: 
+-Wrote business plan and filled out a feasibility form. 
+-Described aspects such as what employees I would theoretically need, market research, how I would advertise, who the suppliers would be and described existing competitors. 
+
+-Looked at similar software that already exists. 
+-Took screenshots of competitors and analyzed them using a heuristic evaluation sheet. 
+
+Week2: 
+-Further research on competitors; listed advantages and disadvantages of the software. 
+
+-Devised a numbered list detailing the software functionality from most important to least important. 
+
+-Listed functionality that if it didn’t exist the software would still be able to achieve its planned intentions. 
+
+Week3: 
+-I made a use case diagram and gave it a description listing out what the types of users can do. 
+-Described the feasibility of the project. 
+-Started on wireframes in figma. 
