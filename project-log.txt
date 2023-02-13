@@ -16,3 +16,8 @@ Week3:
 -I made a use case diagram and gave it a description listing out what the types of users can do. 
 -Described the feasibility of the project. 
 -Started on wireframes in figma. 
+
+Week4:
+-Started doing research on online forums, adding forum examples to miro. Trying to figure out what kind of layout I want to go for.
+
+-Added user/climber profile wireframe in figma, will try to develop a wireframe for a forum next.
