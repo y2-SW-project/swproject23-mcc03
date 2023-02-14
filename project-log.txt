@@ -23,3 +23,5 @@ Week4:
 -Added user/climber profile wireframe in figma, will try to develop a wireframe for a forum next.
 
 -Started filling out section 4 of the word doc & filled in some previous sections I skipped over.
+
+-Did some high-fidelity wireframe work on the homepage
