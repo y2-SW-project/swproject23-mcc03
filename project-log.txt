@@ -21,3 +21,5 @@ Week4:
 -Started doing research on online forums, adding forum examples to miro. Trying to figure out what kind of layout I want to go for.
 
 -Added user/climber profile wireframe in figma, will try to develop a wireframe for a forum next.
+
+-Started filling out section 4 of the word doc & filled in some previous sections I skipped over.
