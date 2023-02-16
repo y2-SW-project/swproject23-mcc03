@@ -25,3 +25,7 @@ Week4:
 -Started filling out section 4 of the word doc & filled in some previous sections I skipped over.
 
 -Did some high-fidelity wireframe work on the homepage
+-Made coach and user profile page into high-fidelity wireframes.
+-Have not made my font choices yet but I am aware of the direction I want to take it in.
+
+-Added into section 4.3 - colour palette and explained my reasoning and choices.
