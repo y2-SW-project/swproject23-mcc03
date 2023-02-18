@@ -34,3 +34,4 @@ Week4:
 -Filled out some of section 4.5, made a user flow chart of how they would navigate and interact with the software.
 
 -Added research into miro.
+-Did more wireframe work for the forum layout, designed a nicer layout but will also be harder to execute.
