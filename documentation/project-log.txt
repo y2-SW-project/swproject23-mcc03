@@ -17,7 +17,7 @@ Week3:
 -Described the feasibility of the project. 
 -Started on wireframes in figma. 
 
-Week4:
+Week3:
 -Started doing research on online forums, adding forum examples to miro. Trying to figure out what kind of layout I want to go for.
 
 -Added user/climber profile wireframe in figma, will try to develop a wireframe for a forum next.
@@ -35,3 +35,6 @@ Week4:
 
 -Added research into miro.
 -Did more wireframe work for the forum layout, designed a nicer layout but will also be harder to execute.
+
+Week4:
+-Started to fill out System Design/ Architecture Overview section in the report.
