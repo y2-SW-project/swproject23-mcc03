@@ -38,3 +38,8 @@ Week3:
 
 Week4:
 -Started to fill out System Design/ Architecture Overview section in the report.
+-Filled out most of the database design section.
+-Need to start on database dictionary.
+-System Design/ Architecture Overview section mostly finished as well, I will need to come back to that section as I need to start developing my code to properly fill it out.
+
+-Installed bootstrap into my laravel project and have replaced the welcome page.
