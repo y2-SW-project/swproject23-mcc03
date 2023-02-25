@@ -43,3 +43,4 @@ Week4:
 -System Design/ Architecture Overview section mostly finished as well, I will need to come back to that section as I need to start developing my code to properly fill it out.
 
 -Installed bootstrap into my laravel project and have replaced the welcome page.
+-Started making migrations for database.
