@@ -44,3 +44,11 @@ Week4:
 
 -Installed bootstrap into my laravel project and have replaced the welcome page.
 -Started making migrations for database.
+
+Week5:
+-Finished database migrations except for a time schedule table that would store a users time schedule to be displayed on their profile, I have no idea of how to go about storing something like this.
+
+-design homepage, set up routes as i go, controllers
+
+-skills as ints
+-time schedule maybe a form the user fills out instead

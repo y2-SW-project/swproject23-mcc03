@@ -1,12 +1,29 @@
 // Fonts
 @import url('https://fonts.bunny.net/css?family=Nunito');
 
-.bg-image{
-    background-image: url('/swproject23-mcc03/softwareProject/public/images/rock-climb.jpg');
-  }
+.homepage-bg-1 {
+    // background: url("/softwareProject/storage/app/public/homepage-rock-1.jpg");
+    background: url("../../storage/app/public/homepage-rock-1.jpg");
+}
+
+.homepage-bg-2 {
+    background: url("../../storage/app/public/partner.png");
+}
+
+.homepage-bg-3 {
+    background: url("../../storage/app/public/bg-3.png");
+}
+
+.button-bg {
+    color: rgba($color: orange, $alpha: 1.0)
+}
 
 // Variables
 @import 'variables';
 
 // Bootstrap
-@import 'bootstrap/scss/bootstrap';
+
+// custom bootstrap
+$primary: rgb(255, 39, 237, 0.5);
+$warning: rgba(255, 157, 0, 0.3);
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';

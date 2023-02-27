@@ -13,18 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('user_comment', function (Blueprint $table) {
+        Schema::create('user_post', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('forum_id')->nullable();
-            $table->unsignedBigInteger('comment_id')->nullable();
+            // $table->unsignedBigInteger('comment_id')->nullable();
             
             // foreign keys
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('restrict');
 
             $table->foreign('forum_id')->references('id')->on('forum_post')->onUpdate('cascade')->onDelete('restrict');
 
-            $table->foreign('comment_id')->references('comment')->on('forum_post')->onUpdate('cascade')->onDelete('restrict');
+            // $table->foreign('comment_id')->references('comment')->on('forum_post')->onUpdate('cascade')->onDelete('restrict');
 
             $table->timestamps();
         });
