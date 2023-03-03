@@ -21,7 +21,6 @@
                         looking for a place to chat and read up on climbing? this is the perfect place!
                     </p>
 
-                    
                     <a class="btn btn-warning col-6 text-uppercase text-light fs-2 fw-bold " href="#" role="button">go to forums</a>
                 </div>
             </div>
@@ -78,5 +77,7 @@
         {{-- container end --}}
     </div>
     {{-- container end --}}
+
+    <a class="btn btn-warning col-6 text-uppercase text-light fs-2 fw-bold " href="user/profile" role="button">profile</a>
 </div>
 @endsection

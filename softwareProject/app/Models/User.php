@@ -41,4 +41,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // this function will returns all users with that role
+    public function roles()
+    {
+        return $this->belongsToMany('App\Models\Role', 'user_role');
+    }
 }

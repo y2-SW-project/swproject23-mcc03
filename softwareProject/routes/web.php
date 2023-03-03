@@ -1,5 +1,8 @@
 <?php
 
+// use App\Http\Controllers\User\ProfileController as UserProfileController;
+use App\Http\Controllers\User\ProfileController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,4 +26,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/user/profile', [ProfileController::class, 'index'])->name('user.profile');
+
+
+
+// Route::resource('/user/profile', UserProfileController::class)->middleware(['auth'])->names('user.profile');
