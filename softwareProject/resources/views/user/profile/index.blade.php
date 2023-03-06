@@ -1,18 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-fluid homepage-bg-1 p-5">
+    <div class="container-fluid">
         <div class="container-lg">
 
             {{-- header --}}
-            <div class="row justify-content-center">
-                <div class="col-6 text-center">
-                    <p class="fs-1 text-light">This is the user profile page</p>
+            <div class="row">
+                <div class="col-6">
+
+                    {{Auth::user()->profile_img}}
+
+                      <p>Skillset</p>
+                      <td>
+                        {{Auth::user()->name}}
+                      </td>
                 </div>
             </div>
         </div>
     </div>
 
-   
+
 
 @endsection

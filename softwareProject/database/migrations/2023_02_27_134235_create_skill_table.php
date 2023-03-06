@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('skill', function (Blueprint $table) {
+        Schema::create('skills', function (Blueprint $table) {
             $table->id();
-            $table->string('slab')->nullable();
-            $table->string('endurance')->nullable();
-            $table->string('technique')->nullable();
-            $table->string('finger_strength')->nullable();
-            $table->string('dyno')->nullable();
-            $table->string('agility')->nullable();
+            $table->string('description')->nullable();
+            // $table->integer('endurance')->nullable();
+            // $table->integer('technique')->nullable();
+            // $table->integer('finger_strength')->nullable();
+            // $table->integer('dyno')->nullable();
+            // $table->integer('agility')->nullable();
             $table->timestamps();
         });
     }

@@ -15,6 +15,11 @@ class ProfileController extends Controller
         // $user = Auth::user();
         // $user->authorizeRoles('user');
 
+        // user must be at least registered to see profile
+        if(!Auth::id()){
+            return abort(403);
+        }
+
         return view('user.profile.index');
     }
 }

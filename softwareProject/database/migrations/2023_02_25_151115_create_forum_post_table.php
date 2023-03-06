@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('forum_post', function (Blueprint $table) {
+        Schema::create('forum_posts', function (Blueprint $table) {
             $table->id();
             $table->string('title')->nullable();
             $table->text('body_text')->nullable();
@@ -24,7 +24,7 @@ return new class extends Migration
             // foreign keys
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('restrict');
 
-            $table->foreign('category_id')->references('id')->on('category')->onUpdate('cascade')->onDelete('restrict');
+            $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('restrict');
         });
     }
 
