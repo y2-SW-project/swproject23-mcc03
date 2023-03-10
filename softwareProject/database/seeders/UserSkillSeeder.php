@@ -15,6 +15,22 @@ class UserSkillSeeder extends Seeder
      */
     public function run()
     {
-        UserSkill::factory()->times(5)->create();
+        $user_skill = new UserSkill();
+        $user_skill->user_id = 1;
+        $user_skill->skill_id = 1;
+        $user_skill->rating = 5;
+        $user_skill->save();
+
+        $user_skill = new UserSkill();
+        $user_skill->user_id = 1;
+        $user_skill->skill_id = 2;
+        $user_skill->rating = 3;
+        $user_skill->save();
+
+        $user_skill = new UserSkill();
+        $user_skill->user_id = 1;
+        $user_skill->skill_id = 3;
+        $user_skill->rating = 2;
+        $user_skill->save();
     }
 }

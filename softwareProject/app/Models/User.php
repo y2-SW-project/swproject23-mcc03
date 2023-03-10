@@ -50,4 +50,10 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Models\Role', 'user_role');
     }
 
+    // many to many
+    public function userSkill()
+    {
+        return $this->belongsToMany(UserSkill::class);
+    }
+
 }

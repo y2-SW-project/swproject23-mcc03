@@ -17,15 +17,14 @@
                 </div>
                 <div>
                     <p class="fw-semibold fs-3">Skillset</p>
-
+                    {{-- {{$user_skills->rating}} --}}
                         <div class="mb-2">
+                          
                             <p class="mb-0 fw-semibold text-muted fs-5">Endurance</p>
                             {{-- traffic light system --}}
-                            <button class="bg-success px-4 py-2"></button> 
-                            <button class="bg-success px-4 py-2"></button> 
-                            <button class="bg-success px-4 py-2"></button> 
-                            <button class="bg-success px-4 py-2"></button> 
-                            <button class="bg-success px-4 py-2"></button>
+                              @for($x = 0; $x < 5; $x++)
+                                <button class="bg-success px-4 py-2"></button> 
+                              @endfor  
                         </div>
 
                         <div class="mb-2">
@@ -34,8 +33,8 @@
                             <button class="bg-warning px-4 py-2"></button> 
                             <button class="bg-warning px-4 py-2"></button> 
                             <button class="bg-warning px-4 py-2"></button> 
-                            <button class="bg-dark px-4 py-2"></button> 
-                            <button class="bg-dark px-4 py-2"></button>
+                            <button class="bg-light px-4 py-2"></button> 
+                            <button class="bg-light px-4 py-2"></button>
                         </div>
 
                         <div class="mb-2">
@@ -43,9 +42,9 @@
                             {{-- traffic light system --}}
                             <button class="bg-danger px-4 py-2"></button> 
                             <button class="bg-danger px-4 py-2"></button> 
-                            <button class="bg-dark px-4 py-2"></button> 
-                            <button class="bg-dark px-4 py-2"></button> 
-                            <button class="bg-dark px-4 py-2"></button>
+                            <button class="bg-light px-4 py-2"></button> 
+                            <button class="bg-light px-4 py-2"></button> 
+                            <button class="bg-light px-4 py-2"></button>
                         </div>
                 </div>
             </div>

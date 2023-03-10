@@ -17,9 +17,9 @@ class UserSkillFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => $this->faker->numberBetween(0, 20),
-            'skill_id' => $this->faker->numberBetween(0, 20),
-            'rating' => $this->faker->numberBetween(0, 5)
+            // 'user_id' => $this->faker->numberBetween(0, 20),
+            // 'skill_id' => $this->faker->numberBetween(0, 20),
+            // 'rating' => $this->faker->numberBetween(0, 5)
         ];
     }
 }
