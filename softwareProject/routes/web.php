@@ -30,4 +30,5 @@ Route::get('/user/profile', [ProfileController::class, 'index'])->name('user.pro
 
 
 
+
 // Route::resource('/user/profile', UserProfileController::class)->middleware(['auth'])->names('user.profile');

@@ -9,8 +9,7 @@
                 <p class="fs-2 mt-5 mb-0">
                     {{-- displaying users name --}}
                     {{Auth::user()->name}}
-                </p>
-
+                    {{-- {{$user_skill->skill_id}} --}}
                 {{-- displays users profile image --}}
                 <div class="profile-bg-user py-8 fw-bold text-light text-center img-fluid">
                     USER PROFILE IMAGE HERE
@@ -23,7 +22,7 @@
                             <p class="mb-0 fw-semibold text-muted fs-5">Endurance</p>
                             {{-- traffic light system --}}
                               @for($x = 0; $x < 5; $x++)
-                                <button class="bg-success px-4 py-2"></button> 
+                                
                               @endfor  
                         </div>
 
