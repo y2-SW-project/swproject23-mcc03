@@ -29,6 +29,8 @@ class ProfileController extends Controller
 
         return view('user.profile.index')->with('user_skills', $users);
         
+
+
         // foreach ($users as $user){
         //     echo $user->name. "<br>";
         // }

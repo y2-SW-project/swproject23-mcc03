@@ -51,9 +51,12 @@ class User extends Authenticatable
     }
 
     // many to many
-    public function userSkill()
+    // public function userSkill()
+    // {
+    //     return $this->belongsToMany(UserSkill::class);
+    // }
+    public function skills()
     {
-        return $this->belongsToMany(UserSkill::class);
+        return $this->belongsToMany(Skill::class, 'user_skills')->withPivot('rating');;
     }
-
 }

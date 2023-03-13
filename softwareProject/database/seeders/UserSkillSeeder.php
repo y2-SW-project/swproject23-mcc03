@@ -32,5 +32,24 @@ class UserSkillSeeder extends Seeder
         $user_skill->skill_id = 3;
         $user_skill->rating = 2;
         $user_skill->save();
+
+        // new user
+        $user_skill = new UserSkill();
+        $user_skill->user_id = 22;
+        $user_skill->skill_id = 1;
+        $user_skill->rating = 5;
+        $user_skill->save();
+
+        $user_skill = new UserSkill();
+        $user_skill->user_id = 22;
+        $user_skill->skill_id = 2;
+        $user_skill->rating = 3;
+        $user_skill->save();
+
+        $user_skill = new UserSkill();
+        $user_skill->user_id = 22;
+        $user_skill->skill_id = 3;
+        $user_skill->rating = 2;
+        $user_skill->save();
     }
 }

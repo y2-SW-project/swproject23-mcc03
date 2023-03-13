@@ -52,3 +52,7 @@ Week5:
 
 -skills as ints
 -time schedule maybe a form the user fills out instead
+
+Week6/7:
+-Setup many to many relationship many users have many users 
+-Started to make a page to view all users

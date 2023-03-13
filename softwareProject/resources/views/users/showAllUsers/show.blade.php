@@ -8,9 +8,9 @@
             <div class="col-3">
                 <p class="fs-2 mt-5 mb-0">
                     {{-- displaying users name --}}
-                    {{Auth::user()->name}}
+                    {{$user->name}}
                     {{-- user profile picture --}}
-                    <img src="{{asset('storage/profile_pic.jpg')}}" width="250"/>
+                    <img src="{{asset('storage/profile_pic.jpg')}}" class="img-responsive img-fluid"/>
         
                 <div>
                     <p class="fw-semibold fs-3">Skillset</p>
@@ -18,7 +18,7 @@
                         <div class="mb-2">
                         
                             {{-- traffic light system --}}
-                            @foreach (Auth::user()->skills as $skill) {
+                            {{-- @foreach (Auth::user()->skills as $skill) {
                               <p class="text-uppercase fw-semibold fs-5 m-0">
                                 {{$skill->description}} 
                                 {{$skill->pivot->rating}}<br>
@@ -26,7 +26,7 @@
                               
 
                             }
-                            @endforeach 
+                            @endforeach  --}}
 
                         </div>
                 </div>
@@ -34,7 +34,7 @@
 
         {{-- contact user button/next user --}}
         <div class="col-9 mt-8">
-            <button type="button" class="btn btn-orange btn-outline-orangeStroke btn-lg col-9 text-light">Contact {{Auth::user()->name}}</button>
+            <button type="button" class="btn btn-orange btn-outline-orangeStroke btn-lg col-9 text-light">Contact {{$user->name}}</button>
 
                 <button type="button" class="btn btn-orange btn-outline-orangeStroke text-light btn-lg col-2">Next User</button>
 

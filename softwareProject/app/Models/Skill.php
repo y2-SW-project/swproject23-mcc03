@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Skill extends Model
 {
     use HasFactory;
-    
+
     protected $table = 'skills';
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'user_skills')->withPivot('rating');
+    }
 }

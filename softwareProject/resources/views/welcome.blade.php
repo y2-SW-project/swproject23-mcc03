@@ -45,7 +45,7 @@
                         two heads is better than one! find a climbing partner that matches you!
                     </p>
 
-                    <a class="btn btn-warning col-6 text-uppercase text-light fs-2 fw-bold " href="#" role="button">find a partner</a>
+                    <a class="btn btn-warning col-6 text-uppercase text-light fs-2 fw-bold " href="users/showAllUsers" role="button">find a partner</a>
                 </div>
             </div>
         </div>
@@ -70,7 +70,7 @@
                         looking to take your climbing to the next level? there are many coaches to select from! find one that matches your requirements.
                     </p>
 
-                    <a class="btn btn-warning col-6 text-uppercase text-light fs-2 fw-bold " href="#" role="button">find a partner</a>
+                    <a class="btn btn-warning col-6 text-uppercase text-light fs-2 fw-bold " href="#" role="button">find a coach</a>
                 </div>
             </div>
         </div>
