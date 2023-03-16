@@ -22,8 +22,6 @@ class ProfileController extends Controller
             return abort(403);
         }
 
-        
-
         $users = User::all();
         // dd($users);
 

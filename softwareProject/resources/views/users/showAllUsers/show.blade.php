@@ -8,7 +8,9 @@
             <div class="col-3">
                 <p class="fs-2 mt-5 mb-0">
                     {{-- displaying users name --}}
-                    {{$user->name}}
+      
+                  <p>{{ $user->name }}</p>
+    
                     {{-- user profile picture --}}
                     <img src="{{asset('storage/profile_pic.jpg')}}" class="img-responsive img-fluid"/>
         

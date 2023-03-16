@@ -22,7 +22,7 @@
             <div class="card-body">
               <p class="fw-bold">{{$user->name}}</p>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="{{route('users.showAllUsers.show', $user)}}" class="btn btn-orange">PROFILE</a>
+              <a href="{{ route('users.showAllUsers.show', ['id' => $user]) }}">{{ $user->name }}</a>
             </div>
           </div>
         </div>

@@ -21,8 +21,6 @@ class UsersController extends Controller
             return abort(403);
         }
 
-        
-
         $users = User::all();
         // dd($users);
 
@@ -40,13 +38,23 @@ class UsersController extends Controller
         }
     }
 
-    public function show(User $user)
-    {
-        if(!Auth::id()) {
-            return abort(403);
-          }
+    // public function show(User $user)
+    // {
+    //     if(!Auth::id()) {
+    //         return abort(403);
+    //       }
+        
+    //     $user = User::find($user);
 
-        return view('users.showAllUsers.show')->with('user', $user);
+    //     dd($user);
+    //     // return view('users.showAllUsers.show', ['user' => $user]);
+    // }
+
+    public function show(User $id)
+    {
+        // $user = User::find($id);
+        // echo $user;
+        return view('users.showAllUsers.show', ['user' => $id]);
     }
 }
 
