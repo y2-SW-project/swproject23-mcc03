@@ -38,22 +38,12 @@ class UsersController extends Controller
         }
     }
 
-    // public function show(User $user)
-    // {
-    //     if(!Auth::id()) {
-    //         return abort(403);
-    //       }
-        
-    //     $user = User::find($user);
-
-    //     dd($user);
-    //     // return view('users.showAllUsers.show', ['user' => $user]);
-    // }
-
     public function show(User $id)
     {
         // $user = User::find($id);
         // echo $user;
+
+        // passing the value of id to user
         return view('users.showAllUsers.show', ['user' => $id]);
     }
 }

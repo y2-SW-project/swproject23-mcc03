@@ -37,5 +37,5 @@ Route::resource('/users/showAllUsers', UsersController::class)->middleware(['aut
 // creates route for showing an individual user profile
 // Route::get('/users/ShowAllUsers/show', [UsersController::class, 'show'])->name('users.showAllUsers.show');
 
-
+// creates route for viewing user profiles
 Route::get('/users/showAllUsers/show/{id}', [UsersController::class, 'show'])->name('users.showAllUsers.show');
