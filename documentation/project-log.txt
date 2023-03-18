@@ -56,3 +56,6 @@ Week5:
 Week6/7:
 -Setup many to many relationship many users have many users 
 -Started to make a page to view all users
+-Can now view each individual user from the view all page via the show function
+-Need to improve the user seeder so the users have different profile images ect.
+-Implemented edit page and working on update function for user profile.

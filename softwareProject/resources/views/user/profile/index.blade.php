@@ -30,6 +30,7 @@
 
                         </div>
                 </div>
+                <button type="button" class="btn bg-orange mt-8"><a href="/user/profile/edit">EDIT</a></button>
             </div>
 
         {{-- contact user button/next user --}}

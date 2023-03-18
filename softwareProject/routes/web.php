@@ -26,8 +26,15 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Auth::routes();
 
+
+
+// creates route for user profile edit page
+Route::get('/user/profile/edit', [ProfileController::class, 'edit'])->name('user.profile.edit');
+
+// Route::get('/user/profile/edit', [ProfileController::class, 'update'])->name('user.profile.edit');
+
 // creates all routes for user profile
-Route::resource('/user/profile', ProfileController::class)->middleware(['auth']);
+Route::resource('/user/profile', ProfileController::class)->middleware(['auth'])->names('user.profile');
 
 // Route::get('/users/showAllUsers', [UsersController::class, 'index'])->name('users.showAllUsers');
 
