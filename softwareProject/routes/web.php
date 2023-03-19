@@ -1,9 +1,12 @@
 <?php
 
 // use App\Http\Controllers\User\ProfileController as UserProfileController;
+
+use App\Http\Controllers\ProfileController as ControllersProfileController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,14 +30,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 
+// Route::put('/user/profile/edit', [ProfileController::class, 'update'])->name('user.profile.edit');
 
-// creates route for user profile edit page
-Route::get('/user/profile/edit', [ProfileController::class, 'edit'])->name('user.profile.edit');
-
-// Route::get('/user/profile/edit', [ProfileController::class, 'update'])->name('user.profile.edit');
+// // creates route for user profile edit page. if this is not defined before, it goes to the show function
+// Route::get('/user/profile/edit', [ProfileController::class, 'edit'])->name('user.profile.edit');
 
 // creates all routes for user profile
 Route::resource('/user/profile', ProfileController::class)->middleware(['auth'])->names('user.profile');
+
 
 // Route::get('/users/showAllUsers', [UsersController::class, 'index'])->name('users.showAllUsers');
 

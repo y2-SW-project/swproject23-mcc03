@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\UserSkill;
 use Illuminate\Support\Facades\Auth;
-
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -32,8 +31,11 @@ class ProfileController extends Controller
         // }
     }
 
-    public function show(){
-        // 
+    public function show(User $user){
+        if(!Auth::id()){
+            return abort(403);
+        }  
+        return view('user.profile.edit')->with('user', $user);
     }
 
     public function edit(User $user){
@@ -41,12 +43,10 @@ class ProfileController extends Controller
             return abort(403);
         }
 
-        $user = User::all();
-        // $names = $users->pluck('name');
-
-        // dd($names);
+        $user = Auth::user();
 
         // return edit view
+        // dd($user);
         return view('user.profile.edit')->with('user', $user);
 
     }
@@ -74,7 +74,7 @@ class ProfileController extends Controller
     //         // 'updated_at' => now()
     //     ]);
 
-    //     // when you create the article, it redirects you back to the index. There you will see the newly made article
+    //     // redirects you back to the index
     //     return to_route('user.profile.edit');
     // }
 
@@ -84,6 +84,8 @@ class ProfileController extends Controller
         if(!Auth::id()){
             return abort(403);
         }
+
+        $user = Auth::user();
         
         // before storing, the values below are checked
         $request->validate([
@@ -93,7 +95,6 @@ class ProfileController extends Controller
             // 'profile_img' => 'file|image'
         ]);
 
-        
         // specified fields that are to update when submitting forum
         $user->update([
             // 'profile_img' => $filename,
@@ -101,8 +102,10 @@ class ProfileController extends Controller
             'email' => $request->email,
             'description' => $request->description,
         ]);
+        
+        $user->save();
 
         // after updating the user, it returns to edit view
-        return to_route('user.profile.edit', $user)->with('success', 'Profile updated successfully');
+        return to_route('user.profile.index', $user)->with('success', 'Profile updated successfully');
     }
 }

@@ -15,7 +15,7 @@
               <div class="row">
                 <div class="col-12 col-sm-auto mb-3">
                   <div class="mx-auto" style="width: 140px;">
-                    <div class="d-flex justify-content-center align-items-center rounded" style="height: 140px; background-color: rgb(233, 236, 239);">
+                    <div class="d-flex justify-content-center align-items-center rounded bg-dark" style="height: 140px;">
                       <span style="color: rgb(166, 168, 170); font: bold 8pt Arial;">140x140</span>
                     </div>
                   </div>
@@ -42,8 +42,10 @@
               </ul>
               <div class="tab-content pt-3">
                 <div class="tab-pane active">
-                  <form class="form" 
-                  {{-- action="{{route('user.profile.update', $user) }}" --}}
+                  <form 
+                  class="form" 
+                  {{-- calls update function --}}
+                  action="{{route('user.profile.update', $user) }}"
                   method="post" enctype="multipart/form-data">
                   @method('put')
                   @csrf
@@ -61,8 +63,10 @@
                             name="name"
                             autocomplete=off
                             :value ="@old('name', $user->name)">
+
                             <label>Name</label>
                             <input class="form-control" type="text" placeholder={{Auth::user()->email}} value={{Auth::user()->name}}></div>
+
                           </div>
                         </div>
 
@@ -76,8 +80,10 @@
                             name="email"
                             autocomplete=off
                             :value ="@old('name', $user->email)">
+
                               <label>Email</label>
                               <input class="form-control" type="text" placeholder={{Auth::user()->email}} value={{Auth::user()->email}}>
+
                             </div>
                           </div>
                         </div>
@@ -92,47 +98,33 @@
                             name="email"
                             autocomplete=off
                             :value ="@old('name', $user->description)">
+
                               <label>Description</label>
                               <textarea class="form-control" rows="5" placeholder={{Auth::user()->description}}></textarea>
+
                             </div>
                           </div>
                         </div>
 
                       </div>
                     </div>
-                    <div class="row">
+                    {{-- <div class="row">
                       <div class="col-lg-12">
-                        <div class="mb-2"><b>Change Password</b></div>
+                        <div class="mb-2"><b>Edit Skills</b></div>
                         <div class="row">
                           <div class="col">
                             <div class="form-group">
-                              <label>Current Password</label>
-                              <input class="form-control" type="password" placeholder="••••••">
+                              <label>Dropdown</label>
+                              <input class="form-control" type="text" placeholder="Skills">
                             </div>
                           </div>
                         </div>
-                        <div class="row">
-                          <div class="col">
-                            <div class="form-group">
-                              <label>New Password</label>
-                              <input class="form-control" type="password" placeholder="••••••">
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col">
-                            <div class="form-group">
-                              <label>Confirm <span class="d-none d-xl-inline">Password</span></label>
-                              <input class="form-control" type="password" placeholder="••••••"></div>
-                          </div>
-                        </div>
-                      </div>
-                      </div>
-                    </div>
+                        <div class="row"> --}}
+
                     <div class="row">
                       <div class="col d-flex justify-content-end">
                         {{-- save changes --}}
-                        <button class="btn btn-orange mt-4" type="submit">Save Changes</button>
+                        <button class="btn btn-orange mt-2" type="submit">Save Changes</button>
                       </div>
                     </div>
                   </form>
