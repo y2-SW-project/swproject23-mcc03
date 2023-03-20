@@ -21,7 +21,7 @@ class ProfileController extends Controller
             return abort(403);
         }
 
-        $users = User::all();
+        $users = Auth::user();
         // dd($users);
 
         return view('user.profile.index')->with('user_skills', $users);
@@ -29,13 +29,20 @@ class ProfileController extends Controller
         // foreach ($users as $user){
         //     echo $user->name. "<br>";
         // }
+
+        $slab_id = 1;
+        $slabRating = UserSkill::where('skill_id', $slab_id);
+        dd($slabRating);
     }
 
     public function show(User $user){
         if(!Auth::id()){
             return abort(403);
         }  
-        return view('user.profile.edit')->with('user', $user);
+        $user = Auth::user();
+
+        dd($user);
+        // return view('user.profile.edit')->with('user', $user);
     }
 
     public function edit(User $user){
@@ -86,8 +93,11 @@ class ProfileController extends Controller
         }
 
         $user = Auth::user();
+        // $skills = UserSkill::class['test']();
         
         // before storing, the values below are checked
+
+        // dd($skills);
         $request->validate([
             'name' => 'required|max:50',
             'email' => 'required',
@@ -95,16 +105,17 @@ class ProfileController extends Controller
             // 'profile_img' => 'file|image'
         ]);
 
+
         // specified fields that are to update when submitting forum
         $user->update([
             // 'profile_img' => $filename,
             'name' => $request->name,
             'email' => $request->email,
             'description' => $request->description,
+            // 'rating' => $request->rating
         ]);
         
         $user->save();
-
         // after updating the user, it returns to edit view
         return to_route('user.profile.index', $user)->with('success', 'Profile updated successfully');
     }

@@ -14,26 +14,23 @@
                     {{-- user profile picture --}}
                     <img src="{{asset('storage/profile_pic.jpg')}}" class="img-responsive img-fluid"/>
         
-                <div>
-                    <p class="fw-semibold fs-3">Skillset</p>
-                    {{-- {{$user_skills->rating}} --}}
-                        <div class="mb-2">
-                        
-                            {{-- traffic light system --}}
-                            {{-- @foreach (Auth::user()->skills as $skill) {
-                              <p class="text-uppercase fw-semibold fs-5 m-0">
-                                {{$skill->description}} 
-                                {{$skill->pivot->rating}}<br>
-                              </p>
-                              
+                    <div class="col-6">
+                      <p class="fs-2 mt-5 mb-0">
+                        hi
+                      </p>
 
-                            }
-                            @endforeach  --}}
+                      {{-- @foreach ($user_skills->skills as $skill)
+                            
+                            <p class="fw-semibold fs-4 mb-0 text-capitalize text-muted">{{$skill->description}}</p>
+                           
+                                
+                            @for ($x = 0; $x < $skill->pivot->rating; $x++) 
+                            <i class="fa-solid fa-circle mb-3"></i>
+                         
+                            @endfor  
+                            @endforeach --}}
 
-                        </div>
-                </div>
-            </div>
-
+                      </div>
         {{-- contact user button/next user --}}
         <div class="col-9 mt-8">
             <button type="button" class="btn btn-orange btn-outline-orangeStroke btn-lg col-9 text-light">Contact {{$user->name}}</button>

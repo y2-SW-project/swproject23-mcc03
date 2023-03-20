@@ -2,6 +2,8 @@
 
 @section('content')
 
+<script src="https://kit.fontawesome.com/45886d57e3.js" crossorigin="anonymous"></script>
+
 <div class="container-fluid ">
     <div class="container-lg mb-8">
         <div class="row">
@@ -10,24 +12,23 @@
                     {{-- displaying users name --}}
                     {{Auth::user()->name}}
                     {{-- user profile picture --}}
-                    <img src="{{asset('storage/profile_pic.jpg')}}" width="250"/>
-        
+                    <img src="{{asset('storage/profile_pic.jpg')}}" class="img-fluid" width="250"/>
                 <div>
-                    <p class="fw-semibold fs-3">Skillset</p>
-                    {{-- {{$user_skills->rating}} --}}
-                        <div class="mb-2">
-                        
-                            {{-- traffic light system --}}
-                            @foreach (Auth::user()->skills as $skill) {
-                              <p class="text-uppercase fw-semibold fs-5 m-0">
-                                {{$skill->description}} 
-                                {{$skill->pivot->rating}}<br>
-                              </p>
-                              
-
-                            }
-                            @endforeach 
-
+                    
+                        <div>
+                          <p class="fw-semibold fs-3 mb-0">SKILLSET</p>
+                  
+                            @foreach ($user_skills->skills as $skill)
+                            
+                            <p class="fw-semibold fs-4 mb-0 text-capitalize text-muted">{{$skill->description}}</p>
+                           
+                                
+                            @for ($x = 0; $x < $skill->pivot->rating; $x++) 
+                            <i class="fa-solid fa-circle mb-3"></i>
+                         
+                            @endfor  
+                            @endforeach
+                            
                         </div>
                 </div>
                 <button type="button" class="btn bg-orange mt-8"><a href="/user/profile/edit">EDIT</a></button>
@@ -35,11 +36,13 @@
 
         {{-- contact user button/next user --}}
         <div class="col-9 mt-8">
-            <button type="button" class="btn btn-orange btn-outline-orangeStroke btn-lg col-9 text-light">Contact {{Auth::user()->name}}</button>
+            <button type="button" class="btn btn-orange btn-outline-orangeStroke btn-lg col-9 col-md-9 text-light">
+              Contact {{Auth::user()->name}}</button>
 
-                <button type="button" class="btn btn-orange btn-outline-orangeStroke text-light btn-lg col-2">Next User</button>
+                <button type="button" class="btn btn-orange btn-outline-orangeStroke text-light btn-lg col-lg-2 col-2">Next User</button>
 
-                <p class="col-9 mt-2 fw-light fs-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt velit, qui maxime doloribus laudantium explicabo! Sit dolorem aut ex natus eveniet, autem vero officiis itaque rem accusantium ducimus quae dolorum voluptatum ratione quaerat corrupti? Rem quo error vitae harum esse molestiae velit. Laudantium accusantium reiciendis hic Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt velit, qui maxime doloribus laudantium explicabo! Sit dolorem aut ex natus eveniet, autem vero officiis itaque rem accusantium ducimus quae dolorum voluptatum ratione quaerat corrupti? Rem quo error vitae harum esse molestiae velit. Laudantium accusantium reiciendis hic </p>
+                <p class="col-9 mt-2 fw-light fs-5">
+                  {{Auth::user()->description}}</p>
         </div>
     </div>
 </div>

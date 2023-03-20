@@ -42,11 +42,11 @@
               </ul>
               <div class="tab-content pt-3">
                 <div class="tab-pane active">
+                  {{-- form start --}}
                   <form 
                   class="form" 
                   {{-- calls update function --}}
-                  action="{{route('user.profile.update', $user) }}"
-                  method="post" enctype="multipart/form-data">
+                  action="{{route('user.profile.update', ['user', $user]) }}" method="post" enctype="multipart/form-data">
                   @method('put')
                   @csrf
                   
@@ -57,16 +57,17 @@
                         <div class="row">
                           <div class="col">
                             {{-- edit field for user name --}}
-                            <div 
-                            class="form-group" 
-                            type="text"
-                            name="name"
-                            autocomplete=off
-                            :value ="@old('name', $user->name)">
+                            <div class="form-group">
 
-                            <label>Name</label>
-                            <input class="form-control" type="text" placeholder={{Auth::user()->email}} value={{Auth::user()->name}}></div>
-
+                            <label>Username</label>
+                              <input                         
+                              type="text"
+                              name="name"
+                              autocomplete=off
+                              :value ="@old('name', $user->name)"class="form-control" type="text" 
+                              placeholder={{Auth::user()->email}} 
+                              value={{Auth::user()->name}}>
+                            </div>
                           </div>
                         </div>
 
@@ -74,15 +75,16 @@
                         <div class="row">
                           <div class="col">
                             {{-- edit field for email --}}
-                            <div 
-                            class="form-group"
-                            type="text"
-                            name="email"
-                            autocomplete=off
-                            :value ="@old('name', $user->email)">
+                            <div class="form-group">
 
                               <label>Email</label>
-                              <input class="form-control" type="text" placeholder={{Auth::user()->email}} value={{Auth::user()->email}}>
+                              <input                             
+                              type="text"
+                              name="email"
+                              autocomplete=off
+                              :value ="@old('name', $user->email)" class="form-control" type="text" 
+                              placeholder={{Auth::user()->email}} 
+                              value={{Auth::user()->email}}>
 
                             </div>
                           </div>
@@ -92,15 +94,16 @@
                         <div class="row">
                           <div class="col mb-3">
                             {{-- edit field for description --}}
-                            <div 
-                            class="form-group"
-                            type="text"
-                            name="email"
-                            autocomplete=off
-                            :value ="@old('name', $user->description)">
+                            <div class="form-group">
 
                               <label>Description</label>
-                              <textarea class="form-control" rows="5" placeholder={{Auth::user()->description}}></textarea>
+                              <textarea                             
+                              type="text"
+                              name="description"
+                              autocomplete=off
+                              :value ="@old('name', $user->description)" class="form-control" rows="5" 
+                              placeholder={{Auth::user()->description}}
+                              value={{Auth::user()->email}}></textarea>
 
                             </div>
                           </div>
@@ -108,18 +111,29 @@
 
                       </div>
                     </div>
-                    {{-- <div class="row">
+                    <div class="row">
                       <div class="col-lg-12">
-                        <div class="mb-2"><b>Edit Skills</b></div>
+                        <div class="mb-2"><b>Edit Skill Ratings</b></div>
                         <div class="row">
                           <div class="col">
                             <div class="form-group">
-                              <label>Dropdown</label>
-                              <input class="form-control" type="text" placeholder="Skills">
+
+                              @foreach (Auth::user()->skills as $skill)
+                                <label class="text-capitalize me-6">{{$skill->description}}</label>
+
+                                <select name={{$skill->description}}>
+                                {{-- select ratings from 1 to 5 --}}
+                                @for ($x = 1; $x <= 5; $x++){
+                                  <option value="<?php echo $x;?>"><?php echo $x;?></option>
+                                }
+                                @endfor
+                              
+                            </select> <br>
+                              @endforeach
                             </div>
                           </div>
                         </div>
-                        <div class="row"> --}}
+                        <div class="row">
 
                     <div class="row">
                       <div class="col d-flex justify-content-end">
@@ -128,6 +142,7 @@
                       </div>
                     </div>
                   </form>
+                  {{-- form end --}}
 
                 </div>
               </div>

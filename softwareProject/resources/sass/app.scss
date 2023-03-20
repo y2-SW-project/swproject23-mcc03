@@ -3,6 +3,15 @@
 // Fonts
 @import url('https://fonts.bunny.net/css?family=Nunito');
 
+// fa icons
+.fa-star {
+    color: #ffa500;
+  }
+
+  .fa-circle {
+    color: #ff6a0083;
+  }
+
 .homepage-bg-1 {
     // background: url("/softwareProject/storage/app/public/homepage-rock-1.jpg");
     background: url("../../storage/app/public/homepage-rock-1.jpg");
@@ -21,7 +30,7 @@
 }
 
 .button-bg {
-    color: rgba($color: orange, $alpha: 1.0)
+    color: rgba($color: #ffa500, $alpha: 0)
 }
 
 // spacers
