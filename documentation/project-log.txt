@@ -59,3 +59,6 @@ Week6/7:
 -Can now view each individual user from the view all page via the show function
 -Need to improve the user seeder so the users have different profile images ect.
 -Implemented edit page and working on update function for user profile.
+
+Week8:
+-Began designing forum page and setup routes.
