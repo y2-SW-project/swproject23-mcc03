@@ -2,8 +2,10 @@
 
 // use App\Http\Controllers\User\ProfileController as UserProfileController;
 
+use App\Http\Controllers\ForumController as ControllersForumController;
 use App\Http\Controllers\ProfileController as ControllersProfileController;
 use App\Http\Controllers\User\ProfileController;
+use App\Http\Controllers\User\ForumController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,6 +38,9 @@ Route::get('/user/profile/edit', [ProfileController::class, 'edit'])->name('user
 
 // creates all routes for user profile
 Route::resource('/user/profile', ProfileController::class)->middleware(['auth'])->names('user.profile');
+
+// creates all routes for user forum
+Route::resource('/user/forum', ForumController::class)->middleware(['auth'])->names('user.forum');
 
 
 // Route::get('/users/showAllUsers', [UsersController::class, 'index'])->name('users.showAllUsers');
