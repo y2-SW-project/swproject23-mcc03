@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title')->nullable();
             $table->text('body_text')->nullable();
-            $table->text('comment')->nullable();
+            // $table->text('comment')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('category_id')->nullable();
 
@@ -25,6 +25,8 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('restrict');
 
             $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('restrict');
+
+            $table->timestamps();
         });
     }
 

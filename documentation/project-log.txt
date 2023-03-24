@@ -62,3 +62,5 @@ Week6/7:
 
 Week8:
 -Began designing forum page and setup routes.
+-Made category seeder & factory
+-Made forum_post seeder & factory
