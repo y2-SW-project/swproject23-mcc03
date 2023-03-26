@@ -11,6 +11,7 @@ class Skill extends Model
 
     protected $table = 'skills';
 
+    // many-to-many
     public function users()
     {
         return $this->belongsToMany(User::class, 'user_skills')->withPivot('rating');

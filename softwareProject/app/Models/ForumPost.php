@@ -18,7 +18,13 @@ class ForumPost extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsTo(User::class);
+    }
+
+    // one-to-many
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
     
 }

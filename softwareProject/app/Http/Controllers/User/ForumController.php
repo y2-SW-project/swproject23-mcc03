@@ -14,22 +14,24 @@ class ForumController extends Controller
 
     public function index()
     {
-        // user authentication
-        // $user = Auth::user();
-        // $user->authorizeRoles('user');
 
         // user must be at least registered to see profile
         if(!Auth::id()){
             return abort(403);
         }
 
-        
-        // this is causing an error because it is trying to find a table 
-        // called forum_posts_user, which does not exist
+        $user = Auth::user();
+
         $forum_posts = ForumPost::with('users')
-        ->with('categories')
+        ->with('category')
         ->get();
 
+        
+
+        $user = User::find($user);
+        // $forum_posts = $user->forumPosts;
+
+        // dd($forum_posts);
         return view('user.forum.index')->with('forum_posts', $forum_posts);
         
         // foreach ($users as $user){

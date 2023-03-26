@@ -57,8 +57,15 @@ class User extends Authenticatable
     // {
     //     return $this->belongsToMany(UserSkill::class);
     // }
+
+    // many-to-many
     public function skills()
     {
-        return $this->belongsToMany(Skill::class, 'user_skills')->withPivot('rating');;
+        return $this->belongsToMany(Skill::class)->withPivot('rating');
+    }
+
+    // one-to-many
+    public function forumPost(){
+        return $this->hasMany(ForumPost::class);
     }
 }
