@@ -42,6 +42,9 @@ Route::resource('/user/profile', ProfileController::class)->middleware(['auth'])
 // creates all routes for user forum
 Route::resource('/user/forum', ForumController::class)->middleware(['auth'])->names('user.forum');
 
+// creates routes for viewing posts
+Route::get('/users/forum/show/{id}', [ForumController::class, 'show'])->name('user.forum.show');
+
 
 // Route::get('/users/showAllUsers', [UsersController::class, 'index'])->name('users.showAllUsers');
 

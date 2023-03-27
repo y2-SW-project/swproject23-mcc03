@@ -16,26 +16,44 @@ class ForumController extends Controller
     {
 
         // user must be at least registered to see profile
-        if(!Auth::id()){
+        if (!Auth::id()) {
             return abort(403);
         }
 
-        $user = Auth::user();
 
-        $forum_posts = ForumPost::with('users')
-        ->with('category')
-        ->get();
+        // $forum_posts = ForumPost::with('users')
+        // ->with('category')
+        // ->get();
 
-        
+        $forum_posts = ForumPost::all();
+        $categories = Category::all();
+        $users = User::all();
 
-        $user = User::find($user);
-        // $forum_posts = $user->forumPosts;
+        // foreach ($forum_posts as $post){
+        //     $users = User::all('id' == $post->user_id);
+        // }
+
+        // $posts = ForumPost::find(1);
+        // $userName = $posts->users->name;
+        // dd($userName);
 
         // dd($forum_posts);
-        return view('user.forum.index')->with('forum_posts', $forum_posts);
-        
-        // foreach ($users as $user){
-        //     echo $user->name. "<br>";
+        return view('user.forum.index')->with('forum_posts', $forum_posts)
+            ->with('categories', $categories)
+            ->with('users', $users);
+
+
+        // foreach ($users as $user) {
+        //     echo $user->id;
         // }
+    }
+
+    public function show(ForumPost $id)
+    {
+        // $user = User::find($id);
+        // echo $user;
+
+        // passing the value of id to user
+        return view('user.forum.show', ['forum_post' => $id]);
     }
 }
