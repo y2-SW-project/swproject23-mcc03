@@ -64,3 +64,7 @@ Week8:
 -Began designing forum page and setup routes.
 -Made category seeder & factory
 -Made forum_post seeder & factory
+
+Week9:
+-On forum index, I am now displaying the user IDs as their name through the use of model relationships.
+-Have implemented a show view for forum posts.

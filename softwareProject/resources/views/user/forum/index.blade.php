@@ -13,11 +13,6 @@
                 <header class="fw-bold fs-3 p-2 mb-0 text-dark">BEGINNERS</header>
                 
             </div> 
-            @forelse ($users as $user)
-            {{$user->id}}
-            {{$user->name}} <br>
-            @empty
-            @endforelse
     </div>
 
     @foreach ($forum_posts as $index => $post)
@@ -28,7 +23,7 @@
 
                 <div class="row">
                 {{-- display post title --}}
-                <a href="{{ route('user.forum.show', ['id' => $post]) }}">
+                <a href="{{ route('user.forum.show', ['id' => $post]) }}" class="text-dark text-decoration-none">
                 <p class="fw-semibold fs-5 col-3">{{ $post->title }}</a></p>
             
             {{-- display user profile image --}}
