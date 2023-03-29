@@ -18,8 +18,18 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        
+        $user = new User();
+        $user->id = 1;
+        $user->name = "mcc";
+        $user->email = "mcc@gmail.com";
+        $user->description = "hello this is my description";
+        $user->profile_img;
+        $user->password = bcrypt("12345678");
+        $user->save();
+
         User::factory()->times(20)->create();
+
+
 
     }
 }

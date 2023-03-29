@@ -9,6 +9,9 @@ class ForumPost extends Model
 {
     use HasFactory;
 
+    // the guarded array is left empty for mass assignment protection
+    protected $guarded = [];
+
     protected $table = 'forum_posts';
 
     public function forumPost()

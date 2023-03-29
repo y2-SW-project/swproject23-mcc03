@@ -68,3 +68,5 @@ Week8:
 Week9:
 -On forum index, I am now displaying the user IDs as their name through the use of model relationships.
 -Have implemented a show view for forum posts.
+-Partly filled out the "testing" section in the report
+-Added functionality to create forum posts, next I will add edit and delete for the forum posts

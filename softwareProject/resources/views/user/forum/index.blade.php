@@ -7,13 +7,19 @@
 
     <div class="container-lg"> 
         <div class="row">
-        <div class="mt-8 col-9">
-            {{-- forum posts start --}}
-            <div class="bg-orange">
-                <header class="fw-bold fs-3 p-2 mb-0 text-dark">BEGINNERS</header>
-                
-            </div> 
-    </div>
+            <div class="mt-8 col-9">
+                {{-- forum posts start --}}
+                <div class="bg-orange">
+                    <header class="fw-bold fs-3 p-2 mb-0 text-dark">
+                    BEGINNERS</header> 
+                </div> 
+            </div>
+
+                <button type="button" class="bg-orange btn col-2 mt-8 btn-outline-orangeStroke">
+                    <a href="forum/create" class="text-center mb-0 text-dark">CREATE POST</a>
+                </button>
+            
+        </div>
 
     @foreach ($forum_posts as $index => $post)
     <div>

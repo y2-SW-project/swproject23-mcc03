@@ -9,6 +9,7 @@ use App\Models\ForumPost;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
+
 class ForumController extends Controller
 {
 
@@ -56,4 +57,38 @@ class ForumController extends Controller
         // passing the value of id to user
         return view('user.forum.show', ['forum_post' => $id]);
     }
+
+    public function create(){
+        
+
+        // gets all categories and user
+        $categories = Category::all();
+        $user = Auth::user();
+        // $users = User::all();
+
+        return view('user.forum.create')->with('categories', $categories)
+        ->with('user', $user);
+    }
+
+    public function store(Request $request){
+        $user = Auth::user();
+
+        // before storing, check these values
+        $request->validate([
+            'title' => 'required|max:50',
+            'body_text' => 'required|max:500',
+            'category_id' => 'required',
+
+        ]);
+
+        $forum_post = ForumPost::create([
+            'title' => $request->title,
+            'body_text' => $request->body_text,
+            'category_id' => $request->category_id,
+            'user_id' => Auth::id()
+        ]);
+
+        return to_route('user.forum.index');
+    }
+
 }
