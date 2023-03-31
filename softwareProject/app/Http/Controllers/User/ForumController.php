@@ -60,7 +60,6 @@ class ForumController extends Controller
 
     public function create(){
         
-
         // gets all categories and user
         $categories = Category::all();
         $user = Auth::user();
@@ -91,4 +90,23 @@ class ForumController extends Controller
         return to_route('user.forum.index');
     }
 
+    public function destroy(ForumPost $forum_post)
+    {
+        // if (auth()->user()->id !== $forum_post->user_id) {
+        //     return back()->with(['message' => 'cant delete this post
+        //     ']);
+        // }
+        
+        $user = Auth::user();
+        $id = Auth::id();
+        // $post = ForumPost::where($forum_post == $user);
+
+            // dd($forum_post);
+        // $deleteThis = ForumPost::where($forum_post->user_id = $id);
+        // ForumPost::where('id', 20)->delete();
+        $forum_post->delete();
+
+        // confirmation message will popup when returning to index after successfully deleting article
+        return to_route('user.forum.index')->with('success', 'Forum post deleted successfully');
+    }
 }
