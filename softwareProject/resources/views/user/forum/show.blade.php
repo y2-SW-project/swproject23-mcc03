@@ -17,16 +17,20 @@
         </form>
 
     </div>
-{{-- {{dd($forum_post)}} --}}
-    <div class="display-5"> {{ $forum_post->id}} </div>
-    <div class="display-5"> {{ $forum_post->user_id}} </div>
+    {{-- category tag --}}
+    <div class="card bg-orange mt-6 p-2 col-2 mb-n2">
+        <p class="mb-0 text-center text-light fw-semibold">{{$forum_post->category->category_name}}</p>
+    </div>
 
-    <div class="card shadow p-2 mt-6">
-            <p>Title: {{$forum_post->title}}</p>
-            <p>Category: {{$forum_post->category_id}}</p>
-            <p>User: {{$forum_post->users->name}}</p>
-            <p>Body text: {{$forum_post->body_text}}</p>
-        </div>
+    {{-- post content --}}
+    <div class="card shadow p-4 mt-0 col-7">
+        {{-- user and time --}}
+        <p class="fw-light text-muted">Posted by <a href="{{ route('users.showAllUsers.show', $forum_post->user_id) }}"class=" text-muted">
+        {{ $forum_post->users->name }}</a> {{ $forum_post->created_at->format('H') }} hours ago</p>
+        
+        {{-- body text --}}
+        <p class="fw-normal fs-16px">{{$forum_post->body_text}}</p>
+    </div>
 </div>
 
 
