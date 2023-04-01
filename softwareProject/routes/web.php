@@ -45,6 +45,8 @@ Route::resource('/user/forum', ForumController::class)->middleware(['auth'])->na
 // creates routes for viewing posts
 Route::get('/users/forum/show/{id}', [ForumController::class, 'show'])->name('user.forum.show');
 
+// creates delete route
+Route::delete('/user/forum/show/{id}', [ForumController::class, 'destroy'])->name('post.destroy');
 
 // Route::get('/users/showAllUsers', [UsersController::class, 'index'])->name('users.showAllUsers');
 

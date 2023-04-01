@@ -6,6 +6,11 @@
 
 <div class="container-fluid ">
     <div class="container-lg mb-8">
+
+      @if(session('success'))
+      <div class="alert alert-success mt-4">{{ session('success') }}</div>
+      @endif
+
         <div class="row">
             <div class="col-3">
                 <p class="fs-2 mt-5 mb-0">

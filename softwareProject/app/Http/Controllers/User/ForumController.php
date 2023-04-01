@@ -87,26 +87,22 @@ class ForumController extends Controller
             'user_id' => Auth::id()
         ]);
 
-        return to_route('user.forum.index');
+        return to_route('user.forum.index')->with('success', 'Post created successfully!');
     }
 
-    public function destroy(ForumPost $forum_post)
+    public function destroy($id)
     {
-        // if (auth()->user()->id !== $forum_post->user_id) {
-        //     return back()->with(['message' => 'cant delete this post
-        //     ']);
-        // }
+
+        $forum_post = ForumPost::findOrFail($id);
         
-        $user = Auth::user();
-        $id = Auth::id();
-        // $post = ForumPost::where($forum_post == $user);
+        // Check if the authenticated user is the owner of the post
+        if ($forum_post->user_id !== auth()->id()) {
+        return redirect()->route('user.forum.index')->with('error', 'You are not authorized to delete this post');
+    }
 
-            // dd($forum_post);
-        // $deleteThis = ForumPost::where($forum_post->user_id = $id);
-        // ForumPost::where('id', 20)->delete();
         $forum_post->delete();
+        // success message and redirect
+        return redirect()->route('user.forum.index')->with('success', 'Post deleted successfully');
 
-        // confirmation message will popup when returning to index after successfully deleting article
-        return to_route('user.forum.index')->with('success', 'Forum post deleted successfully');
     }
 }

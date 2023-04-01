@@ -70,3 +70,6 @@ Week9:
 -Have implemented a show view for forum posts.
 -Partly filled out the "testing" section in the report
 -Added functionality to create forum posts, next I will add edit and delete for the forum posts
+
+-Delete functionality added
+-As a user you can only delete your own posts, returns error otherwise

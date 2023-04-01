@@ -10,14 +10,10 @@
     <div class="flex-row-reverse mt-4">
         {{-- <button type="button" class="col-2 btn btn-orange col-3">Edit</button> --}}
 
-        {{-- delete --}}
-        {{-- {{dd($forum_post->id)}} --}}
-        <form action="{{ route('user.forum.destroy', $forum_post)}}" method="post">
-        @method('delete')
-        @csrf
-        
-        {{-- confirm message --}}
-        <button type="submit" class="btn btn-danger me-4" onclick="return confirm('Are you sure you want to delete this forum post?')">Delete Forum Post</button>
+        <form action="{{ route('post.destroy', $forum_post->id) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger">Delete</button>
         </form>
 
     </div>

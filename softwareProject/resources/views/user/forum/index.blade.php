@@ -2,10 +2,21 @@
 
 @section('content')
 
+
+
 {{-- fontawesome icons --}}
 <script src="https://kit.fontawesome.com/45886d57e3.js" crossorigin="anonymous"></script>
 
     <div class="container-lg"> 
+
+        @if(session('error'))
+    <div class="alert alert-danger mt-4">{{ session('error') }}</div>
+    @endif
+
+    @if(session('success'))
+    <div class="alert alert-success mt-4">{{ session('success') }}</div>
+    @endif
+    
         <div class="row">
             <div class="mt-8 col-9">
                 {{-- forum posts start --}}
