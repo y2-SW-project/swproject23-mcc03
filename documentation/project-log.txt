@@ -74,3 +74,4 @@ Week9:
 -Delete functionality added
 -As a user you can only delete your own posts, returns error otherwise
 -Did some bootstrap design on forum page
+-Can edit posts now, can only edit your own stuff, otherwise you get a 403 error

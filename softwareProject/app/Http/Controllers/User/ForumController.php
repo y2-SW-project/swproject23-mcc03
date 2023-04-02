@@ -98,6 +98,14 @@ class ForumController extends Controller
         // retrieve the forum post from the database
         $forum_post = ForumPost::findOrFail($id);
     
+        // getting the ID of the authenticated user
+        $user_id = auth()->user()->id;
+
+        // check if the user owns the post
+        if ($forum_post->user_id != $user_id) {
+            abort(403, 'Unauthorized action.');
+        }
+
         // checking values before update
         $request->validate([
             'title' => 'required|max:50',
