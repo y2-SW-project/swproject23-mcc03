@@ -105,7 +105,6 @@ class ProfileController extends Controller
             // 'profile_img' => 'file|image'
         ]);
 
-
         // specified fields that are to update when submitting forum
         $user->update([
             // 'profile_img' => $filename,
@@ -116,6 +115,7 @@ class ProfileController extends Controller
         ]);
         
         $user->save();
+
         // after updating the user, it returns to edit view
         return to_route('user.profile.index', $user)->with('success', 'Profile updated successfully');
     }

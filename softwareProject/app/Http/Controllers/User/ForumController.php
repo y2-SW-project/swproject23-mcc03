@@ -22,6 +22,7 @@ class ForumController extends Controller
         }
 
         $forum_posts = ForumPost::all();
+        // $forum_posts = ForumPost::paginate(10);
         $categories = Category::all();
         $users = User::all();
 
@@ -74,19 +75,63 @@ class ForumController extends Controller
         return to_route('user.forum.index')->with('success', 'Post created successfully!');
     }
 
+    public function edit($id){
+        
+        if(!Auth::id()){
+            return abort(403);
+        }
+
+        // gets forum post, all users and categories
+        $forum_post = ForumPost::findOrFail($id);
+        $categories = Category::all();
+        $user = User::all();
+
+        // return edit view
+        // dd($user);
+        return view('user.forum.edit')->with('forum_post', $forum_post)
+        ->with('user', $user)
+        ->with('categories', $categories);
+    }
+
+    public function update(Request $request, $id){
+
+        // retrieve the forum post from the database
+        $forum_post = ForumPost::findOrFail($id);
+    
+        // checking values before update
+        $request->validate([
+            'title' => 'required|max:50',
+            'body_text' => 'required|max:500',
+            'category_id' => 'required'
+        ]);
+        
+        // specified fields that are to update when submitting forum
+        $forum_post->update([
+            'title' => $request->title,
+            'body_text' => $request->body_text,
+            'category_id' => $request->category_id,
+        ]);
+    
+        // dd($forum_post);
+    
+        // after updating the post, it returns to the original view of the post
+        return redirect()->route('user.forum.index')->with('success', 'Post updated successfully');
+    }
+    
+
     public function destroy($id)
     {
 
-        $forum_post = ForumPost::findOrFail($id);
-        
-        // Check if the authenticated user is the owner of the post
-        if ($forum_post->user_id !== auth()->id()) {
+    $forum_post = ForumPost::findOrFail($id);
+    
+    // Check if the authenticated user is the owner of the post
+    if ($forum_post->user_id !== auth()->id()) {
         return redirect()->route('user.forum.index')->with('error', 'You are not authorized to delete this post');
     }
 
-        $forum_post->delete();
-        // success message and redirect
-        return redirect()->route('user.forum.index')->with('success', 'Post deleted successfully');
+    $forum_post->delete();
+    // success message and redirect
+    return redirect()->route('user.forum.index')->with('success', 'Post deleted successfully');
 
     }
 }

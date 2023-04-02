@@ -7,15 +7,21 @@
 
 <div class="container-lg">
 
-    <div class="flex-row-reverse mt-4">
-        {{-- <button type="button" class="col-2 btn btn-orange col-3">Edit</button> --}}
+    <div class="justify-content-start d-flex">
+        <div class="d-inline-flex mt-4">
+            {{-- <button type="button" class="col-2 btn btn-orange col-3">Edit</button> --}}
 
-        <form action="{{ route('post.destroy', $forum_post->id) }}" method="POST">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn btn-danger">Delete</button>
-        </form>
+            <form action="{{ route('post.destroy', $forum_post->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger me-2">Delete</button>
+            </form>
 
+            <form action="{{ route('user.forum.edit', $forum_post->id) }}">
+                <button type="submit" class="btn btn-blue">Edit</button>
+            </form>
+
+        </div>
     </div>
     {{-- category tag --}}
     <div class="card bg-orange mt-6 p-2 col-2 mb-n2">
