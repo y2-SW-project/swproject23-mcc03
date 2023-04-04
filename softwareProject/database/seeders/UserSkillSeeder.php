@@ -2,66 +2,29 @@
 
 namespace Database\Seeders;
 
-use App\Models\UserSkill;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\User;
+use App\Models\Skill;
+use App\Models\UserSkill;
 
 class UserSkillSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
-        $user_skill = new UserSkill();
-        $user_skill->user_id = 1;
-        $user_skill->skill_id = 1;
-        $user_skill->rating = 5;
-        $user_skill->save();
+        $users = User::all();
+        $skills = Skill::inRandomOrder()->limit(5)->get();
+        $faker = \Faker\Factory::create();
 
-        $user_skill = new UserSkill();
-        $user_skill->user_id = 1;
-        $user_skill->skill_id = 2;
-        $user_skill->rating = 3;
-        $user_skill->save();
-
-        $user_skill = new UserSkill();
-        $user_skill->user_id = 1;
-        $user_skill->skill_id = 3;
-        $user_skill->rating = 2;
-        $user_skill->save();
-
-        $user_skill = new UserSkill();
-        $user_skill->user_id = 1;
-        $user_skill->skill_id = 4;
-        $user_skill->rating = 4;
-        $user_skill->save();
-
-        $user_skill = new UserSkill();
-        $user_skill->user_id = 1;
-        $user_skill->skill_id = 5;
-        $user_skill->rating = 5;
-        $user_skill->save();
-
-        // new user
-        $user_skill = new UserSkill();
-        $user_skill->user_id = 2;
-        $user_skill->skill_id = 1;
-        $user_skill->rating = 5;
-        $user_skill->save();
-
-        $user_skill = new UserSkill();
-        $user_skill->user_id = 2;
-        $user_skill->skill_id = 2;
-        $user_skill->rating = 3;
-        $user_skill->save();
-
-        $user_skill = new UserSkill();
-        $user_skill->user_id = 2;
-        $user_skill->skill_id = 3;
-        $user_skill->rating = 2;
-        $user_skill->save();
+        foreach ($users as $user) {
+            foreach ($skills as $skill) {
+                UserSkill::create([
+                    'user_id' => $user->id,
+                    'skill_id' => $skill->id,
+                    'rating' => $faker->numberBetween(1, 5),
+                ]);
+            }
+        }
     }
 }
+
+
