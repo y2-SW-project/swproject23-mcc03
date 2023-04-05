@@ -11,13 +11,13 @@
         <div class="d-inline-flex mt-4">
             {{-- <button type="button" class="col-2 btn btn-orange col-3">Edit</button> --}}
 
-            <form action="{{ route('user.post.destroy', $forum_post->id) }}" method="POST">
+            <form action="{{ route('post.destroy', $forum_post->id) }}" method="POST">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger me-2">Delete</button>
             </form>
 
-            <form action="{{ route('user.forum.edit', $forum_post->id) }}">
+            <form action="{{ route('admin.forum.edit', $forum_post->id) }}">
                 <button type="submit" class="btn btn-blue">Edit</button>
             </form>
 

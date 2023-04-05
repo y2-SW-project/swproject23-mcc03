@@ -19,8 +19,8 @@ class RoleSeeder extends Seeder
         $role_admin->name = 'admin';
         $role_admin->save();
 
-        $role_climber = new Role();
-        $role_climber->name = 'climber';
-        $role_climber->save();
+        $role_user = new Role();
+        $role_user->name = 'user';
+        $role_user->save();
     }
 }

@@ -14,14 +14,14 @@
             <div class="row justify-content-start pt-5">
                 <div class="col-7 text">
                     <p class="fs-1 fw-bold text-light text-uppercase m-0">
-                        forums
+                        Admin Forums
                     </p>
 
                     <p class="fs-4 fw-bold text-light text-uppercase">
                         looking for a place to chat and read up on climbing? this is the perfect place!
                     </p>
 
-                    <a class="btn btn-warning col-6 text-uppercase text-light fs-2 fw-bold " href="user/forum" role="button">go to forums</a>
+                    <a class="btn btn-warning col-6 text-uppercase text-light fs-2 fw-bold " href="/admin/forum" role="button">go to forums</a>
                 </div>
             </div>
         </div>

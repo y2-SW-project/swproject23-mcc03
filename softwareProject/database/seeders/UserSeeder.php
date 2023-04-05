@@ -24,7 +24,7 @@ class UserSeeder extends Seeder
         $role_admin = Role::where('name', 'admin')->first();
 
         // gets user role from the table. will attach this role to a user
-        $role_climber = Role::where('name', 'climber')->first();
+        $role_user = Role::where('name', 'user')->first();
 
         $admin = new User();
         $admin->id = 1;
@@ -38,17 +38,17 @@ class UserSeeder extends Seeder
         // attach the admin role to the user that was created above.
         $admin->roles()->attach($role_admin);
 
-        $climber = new User();
-        $climber->id = 2;
-        $climber->name = "Climber";
-        $climber->email = "climb@gmail.com";
-        $climber->description = "I am a user with the role climber, my functionality should be restricted.";
-        $climber->profile_img;
-        $climber->password = bcrypt("12345678");
-        $climber->save();
+        $user = new User();
+        $user->id = 2;
+        $user->name = "user";
+        $user->email = "climb@gmail.com";
+        $user->description = "I am a user with the role user, my functionality should be restricted.";
+        $user->profile_img;
+        $user->password = bcrypt("12345678");
+        $user->save();
         
-        // attach the climber role to the user that was created above.
-        $climber->roles()->attach($role_climber);
+        // attach the user role to the user that was created above.
+        $user->roles()->attach($role_user);
 
 
         User::factory()->times(20)->create();

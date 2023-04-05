@@ -75,3 +75,7 @@ Week9:
 -As a user you can only delete your own posts, returns error otherwise
 -Did some bootstrap design on forum page
 -Can edit posts now, can only edit your own stuff, otherwise you get a 403 error
+
+Week10:
+-Added admin routes and views
+-Admins can delete and edit everything as well as create
