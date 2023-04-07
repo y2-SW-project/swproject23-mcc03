@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class HomeController extends Controller
 {
@@ -30,7 +32,11 @@ class HomeController extends Controller
 
     public function adminHome()
     {
-        return view('admin/welcome');
-
+        // authorization check if user has admin role
+        if (Gate::allows('view-admin-welcome')) {
+            return view('admin/welcome');
+        } else {
+            abort(403, 'Unauthorized action.');
+        }
     }
 }

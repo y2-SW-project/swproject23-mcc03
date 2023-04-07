@@ -39,7 +39,7 @@ class LoginController extends Controller
         $user = Auth::user();
 
         if ($user->hasRole('admin')) {
-            return route('admin/welcome');
+            return route('admin.welcome');
         }
 
         return route('user.welcome');
