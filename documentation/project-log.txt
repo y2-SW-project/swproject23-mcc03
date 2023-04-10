@@ -79,3 +79,7 @@ Week9:
 Week10:
 -Added admin routes and views
 -Admins can delete and edit everything as well as create
+
+Week11:
+-Added the rest of gates for admin so users cannot access their views
+-Added images to user seeder

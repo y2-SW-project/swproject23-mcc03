@@ -17,7 +17,7 @@
                     {{-- displaying users name --}}
                     {{Auth::user()->name}}
                     {{-- user profile picture --}}
-                    <img src="{{asset('storage/profile_pic.jpg')}}" class="img-fluid" width="250"/>
+                    <img src="{{ asset('storage/' . Auth::user()->profile_img) }}" width="250" alt="User Profile Image">
                 <div>
                     
                         <div>
@@ -36,6 +36,7 @@
                             
                         </div>
                 </div>
+
                 <button type="button" class="btn bg-orange mt-8"><a href="/user/profile/edit">EDIT</a></button>
             </div>
 

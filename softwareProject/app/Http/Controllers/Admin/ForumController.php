@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\ForumPost;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 
 class ForumController extends Controller
@@ -19,6 +20,13 @@ class ForumController extends Controller
         // user must be at least registered to see profile
         if (!Auth::id()) {
             return abort(403);
+        }
+
+        // authorization check if user has admin role
+        if (Gate::allows('view-admin-forum')) {
+            return view('/admin/forum');
+        } else {
+            abort(403, 'Unauthorized action.');
         }
 
         // $user = Auth::user();
@@ -48,6 +56,13 @@ class ForumController extends Controller
 
     public function create(){
         
+        // authorization check if user has admin role
+        if (Gate::allows('view-admin-create')) {
+            return view('/admin/forum');
+        } else {
+            abort(403, 'Unauthorized action.');
+        }
+
         // gets all categories and user
         $categories = Category::all();
         $user = Auth::user();

@@ -12,25 +12,23 @@
                   {{ $user->name }}
     
                     {{-- user profile picture --}}
-                    <img src="{{asset('storage/profile_pic.jpg')}}" class="img-responsive img-fluid"/>
+                    <img src="{{ asset('storage/' . $user->profile_img) }}" width="250" alt="User Profile Image">
         
-                    <div class="col-6">
-                      <p class="fs-2 mt-5 mb-0">
-                        hi
-                      </p>
+                    {{-- <div>
+                    
+                      <div>
+                        <p class="fw-semibold fs-3 mb-0">SKILLSET</p>
+                
 
-                      {{-- @foreach ($user_skills->skills as $skill)
-                            
-                            <p class="fw-semibold fs-4 mb-0 text-capitalize text-muted">{{$skill->description}}</p>
-                           
-                                
-                            @for ($x = 0; $x < $skill->pivot->rating; $x++) 
-                            <i class="fa-solid fa-circle mb-3"></i>
-                         
-                            @endfor  
-                            @endforeach --}}
-
+                          @foreach ($user_skills as $user_skill)
+                          <p class="fw-semibold fs-4 mb-0 text-capitalize text-muted">{{$user_skills->rating}}</p>
+                          @endforeach
+       
+     
+                          
                       </div>
+              </div> --}}
+
         {{-- contact user button/next user --}}
         <div class="col-9 mt-8">
             <button type="button" class="btn btn-orange btn-outline-orangeStroke btn-lg col-9 text-light">Contact {{$user->name}}</button>

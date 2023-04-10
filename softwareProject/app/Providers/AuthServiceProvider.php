@@ -27,7 +27,19 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         // defining gate rules
+
+        // gate for admin welcome
         Gate::define('view-admin-welcome', function ($user) {
+            return $user->hasRole('admin');
+        });
+
+        // gate for admin forum
+        Gate::define('view-admin-forum', function ($user) {
+            return $user->hasRole('admin');
+        });
+
+        // gate for admin create
+        Gate::define('view-admin-create', function ($user) {
             return $user->hasRole('admin');
         });
     }

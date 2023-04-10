@@ -40,11 +40,12 @@ class UsersController extends Controller
 
     public function show(User $id)
     {
-        // $user = User::find($id);
-        // echo $user;
+        $users = User::find($id);
+
+        // return view('users.showAllUsers.show')->with('user_skills', $users);
 
         // passing the value of id to user
-        return view('users.showAllUsers.show', ['user' => $id]);
+        return view('users.showAllUsers.show', ['user' => $id])->with('user_skills', $users);
     }
 }
 

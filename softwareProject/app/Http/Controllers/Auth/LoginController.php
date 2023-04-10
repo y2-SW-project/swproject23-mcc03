@@ -38,6 +38,7 @@ class LoginController extends Controller
     {
         $user = Auth::user();
 
+        // return to routes based on roles
         if ($user->hasRole('admin')) {
             return route('admin.welcome');
         }

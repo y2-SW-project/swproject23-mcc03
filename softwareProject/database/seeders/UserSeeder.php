@@ -31,7 +31,7 @@ class UserSeeder extends Seeder
         $admin->name = "mcc";
         $admin->email = "mcc@gmail.com";
         $admin->description = "I am an admin, I should be able to do everything!";
-        $admin->profile_img;
+        $admin->profile_img = 'admin.png';
         $admin->password = bcrypt("12345678");
         $admin->save();
 
@@ -43,7 +43,7 @@ class UserSeeder extends Seeder
         $user->name = "user";
         $user->email = "climb@gmail.com";
         $user->description = "I am a user with the role user, my functionality should be restricted.";
-        $user->profile_img;
+        $user->profile_img = 'placeholder_fn.png';
         $user->password = bcrypt("12345678");
         $user->save();
         
