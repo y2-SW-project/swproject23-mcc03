@@ -2,40 +2,54 @@
 
 @section('content')
 
+<script src="https://kit.fontawesome.com/45886d57e3.js" crossorigin="anonymous"></script>
+
 <div class="container-fluid ">
     <div class="container-lg mb-8">
+
         <div class="row">
             <div class="col-3">
                 <p class="fs-2 mt-5 mb-0">
                     {{-- displaying users name --}}
-      
-                  {{ $user->name }}
-    
+                    {{ $user->name }}
                     {{-- user profile picture --}}
                     <img src="{{ asset('storage/' . $user->profile_img) }}" width="250" alt="User Profile Image">
-        
-                    {{-- <div>
-                    
-                      <div>
-                        <p class="fw-semibold fs-3 mb-0">SKILLSET</p>
-                
 
-                          @foreach ($user_skills as $user_skill)
-                          <p class="fw-semibold fs-4 mb-0 text-capitalize text-muted">{{$user_skills->rating}}</p>
-                          @endforeach
-       
-     
-                          
-                      </div>
-              </div> --}}
+                <div>
+                    <div>
+                        <p class="fw-semibold fs-3 mb-0">SKILLSET</p>
+                        @foreach ($user->skills as $skill)
+
+                        {{-- displays skill descriptions --}}
+                        <p class="fw-semibold fs-4 mb-0 text-capitalize text-muted">{{ $skill->description }}</p>
+
+                        {{-- display user's skills --}}
+                        @for ($x = 0; $x < $skill->pivot->rating; $x++) 
+                            <i class="fa-solid fa-circle mb-3"></i>
+                        @endfor
+
+                      @endforeach   
+                    </div>
+                </div>
+
+                <button type="button" class="btn bg-orange mt-8"><a href="/user/profile/edit">EDIT</a></button>
+            </div>
 
         {{-- contact user button/next user --}}
         <div class="col-9 mt-8">
-            <button type="button" class="btn btn-orange btn-outline-orangeStroke btn-lg col-9 text-light">Contact {{$user->name}}</button>
+            <button type="button" class="btn btn-orange btn-outline-orangeStroke btn-lg col-9 col-md-9 text-light">
+              Contact {{ $user->name }}</button>
 
-                <button type="button" class="btn btn-orange btn-outline-orangeStroke text-light btn-lg col-2">Next User</button>
+              {{-- adding 1 to the current id and storing it in variable --}}
+                  @php
+                      $nextUserId = $user->id + 1;
+                      $nextUserUrl = "/users/showAllUsers/show/$nextUserId";
+                  @endphp
 
-                <p class="col-9 mt-2 fw-light fs-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt velit, qui maxime doloribus laudantium explicabo! Sit dolorem aut ex natus eveniet, autem vero officiis itaque rem accusantium ducimus quae dolorum voluptatum ratione quaerat corrupti? Rem quo error vitae harum esse molestiae velit. Laudantium accusantium reiciendis hic Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt velit, qui maxime doloribus laudantium explicabo! Sit dolorem aut ex natus eveniet, autem vero officiis itaque rem accusantium ducimus quae dolorum voluptatum ratione quaerat corrupti? Rem quo error vitae harum esse molestiae velit. Laudantium accusantium reiciendis hic </p>
+                  <a href="{{ $nextUserUrl }}" class="btn btn-orange btn-outline-orangeStroke text-light btn-lg col-lg-2 col-2">Next User</a>
+
+                <p class="col-9 mt-2 fw-light fs-5">
+                  {{ $user->description }}</p>
         </div>
     </div>
 </div>
