@@ -33,12 +33,12 @@ class AuthServiceProvider extends ServiceProvider
             return $user->hasRole('admin');
         });
 
-        // gate for admin forum
+        // // gate for admin forum
         Gate::define('view-admin-forum', function ($user) {
             return $user->hasRole('admin');
         });
 
-        // gate for admin create
+        // // gate for admin create
         Gate::define('view-admin-create', function ($user) {
             return $user->hasRole('admin');
         });

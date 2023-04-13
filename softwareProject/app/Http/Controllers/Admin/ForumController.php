@@ -19,33 +19,23 @@ class ForumController extends Controller
 
         // user must be at least registered to see profile
         if (!Auth::id()) {
-            return abort(403);
+            return abort("400");
         }
-
-        // authorization check if user has admin role
-        if (Gate::allows('view-admin-forum')) {
-            return view('/admin/forum');
-        } else {
-            abort(403, 'Unauthorized action.');
-        }
-
-        // $user = Auth::user();
-        // $user->authorizeRoles('admin');
 
         $forum_posts = ForumPost::all();
         // $forum_posts = ForumPost::paginate(10);
         $categories = Category::all();
         $user = User::all();
 
-        // dd($forum_posts);
-        return view('admin.forum.index')->with('forum_posts', $forum_posts)
+        // authorization check if user has admin role
+        if (Gate::allows('view-admin-forum')) {
+            return view('admin.forum.index')->with('forum_posts', $forum_posts)
             ->with('categories', $categories)
             ->with('user', $user);
+        } else {
+            abort(403, 'Unauthorized action.');
+        }
 
-
-        // foreach ($users as $user) {
-        //     echo $user->id;
-        // }
     }
 
     public function show(ForumPost $id)
@@ -56,20 +46,19 @@ class ForumController extends Controller
 
     public function create(){
         
-        // authorization check if user has admin role
-        if (Gate::allows('view-admin-create')) {
-            return view('/admin/forum');
-        } else {
-            abort(403, 'Unauthorized action.');
-        }
-
         // gets all categories and user
         $categories = Category::all();
         $user = Auth::user();
         // $users = User::all();
 
-        return view('admin.forum.create')->with('categories', $categories)
-        ->with('user', $user);
+        // authorization check if user has admin role
+        if (Gate::allows('view-admin-create')) {
+            return view('admin.forum.create')->with('categories', $categories)
+            ->with('user', $user);
+        } else {
+            abort(403, 'Unauthorized action.');
+        }
+
     }
 
     public function store(Request $request){

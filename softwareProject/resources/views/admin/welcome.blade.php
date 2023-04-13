@@ -14,9 +14,8 @@
             <div class="row justify-content-start pt-5">
                 <div class="col-7 text">
                     <p class="fs-1 fw-bold text-light text-uppercase m-0">
-                        Admin Forums
-                    </p>
-
+                        Admin Forum</p>
+                        
                     <p class="fs-4 fw-bold text-light text-uppercase">
                         looking for a place to chat and read up on climbing? this is the perfect place!
                     </p>
@@ -45,7 +44,7 @@
                         two heads is better than one! find a climbing partner that matches you!
                     </p>
 
-                    <a class="btn btn-warning col-6 text-uppercase text-light fs-2 fw-bold " href="users/showAllUsers" role="button">find a partner</a>
+                    <a class="btn btn-warning col-6 text-uppercase text-light fs-2 fw-bold " href="/users/showAllUsers" role="button">find a partner</a>
                 </div>
             </div>
         </div>
@@ -78,6 +77,6 @@
     </div>
     {{-- container end --}}
 
-    <a class="btn btn-warning col-6 text-uppercase text-light fs-2 fw-bold " href="user/profile" role="button">profile</a>
+    <a class="btn btn-warning col-6 text-uppercase text-light fs-2 fw-bold " href="/user/profile" role="button">profile</a>
 </div>
 @endsection

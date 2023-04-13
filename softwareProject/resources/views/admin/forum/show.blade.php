@@ -9,9 +9,10 @@
 
     <div class="justify-content-start d-flex">
         <div class="d-inline-flex mt-4">
+
             {{-- <button type="button" class="col-2 btn btn-orange col-3">Edit</button> --}}
 
-            <form action="{{ route('post.destroy', $forum_post->id) }}" method="POST">
+            <form action="{{ route('admin.post.destroy', $forum_post->id) }}" method="POST">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger me-2">Delete</button>
