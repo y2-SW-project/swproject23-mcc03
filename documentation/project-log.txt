@@ -80,6 +80,7 @@ Week10:
 -Added admin routes and views
 -Admins can delete and edit everything as well as create
 
-Week11:
+Week11/12:
 -Added the rest of gates for admin so users cannot access their views
 -Added images to user seeder
+-Finishing up and refining areas of the report for the software project
