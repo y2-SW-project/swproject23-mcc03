@@ -35,18 +35,11 @@ Auth::routes();
 // gets welcome page route for admin
 Route::get('/user/welcome', [App\Http\Controllers\HomeController::class, 'userHome'])->name('user.welcome');
 
-// gets welcome page route for admin
-Route::get('/admin/welcome', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.welcome');
-
-// admin forum route creation
-Route::resource('/admin/forum', AdminForumController::class)->middleware(['auth'])->names('admin.forum');
-
 // creates all routes for user profile
 Route::resource('/user/profile', ProfileController::class)->middleware(['auth'])->names('user.profile');
 
 // creates all routes for user forum
 Route::resource('/user/forum', UserForumController::class)->middleware(['auth'])->names('user.forum');
-
 
 // creates all routes for showing all users
 Route::resource('/users/showAllUsers', UsersController::class)->middleware(['auth']);
@@ -60,6 +53,11 @@ Route::delete('/user/forum/show/{id}', [UserForumController::class, 'destroy'])-
 // creates route for viewing user profiles
 Route::get('/users/showAllUsers/show/{id}', [UsersController::class, 'show'])->name('users.showAllUsers.show');
 
+// gets welcome page route for admin
+Route::get('/admin/welcome', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.welcome');
+
+// admin forum route creation
+Route::resource('/admin/forum', AdminForumController::class)->middleware(['auth'])->names('admin.forum');
 
 // admin routes for viewing posts
 Route::get('/admin/forum/show/{id}', [AdminForumController::class, 'show'])->name('admin.forum.show');

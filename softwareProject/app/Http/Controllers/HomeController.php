@@ -24,6 +24,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function index()
+    {
+        return view('user/welcome');
+
+    }
+
     public function userHome()
     {
         return view('user/welcome');

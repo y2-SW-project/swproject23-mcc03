@@ -41,8 +41,8 @@ class ProfileController extends Controller
         }  
         $user = Auth::user();
 
-        dd($user);
-        // return view('user.profile.edit')->with('user', $user);
+        // dd($user);
+        return view('user.profile.edit')->with('user', $user);
     }
 
     public function edit(User $user){
@@ -53,7 +53,7 @@ class ProfileController extends Controller
         $user = Auth::user();
 
         // return edit view
-        // dd($user);
+        //dd($user);
         return view('user.profile.edit')->with('user', $user);
 
     }

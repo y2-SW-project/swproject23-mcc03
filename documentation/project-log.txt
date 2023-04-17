@@ -92,3 +92,8 @@ to do:
 -Flesh out section 2- Market Research
 -Move edit button on profile
 -Add image upload for profile picture
+
+video:
+don't go too deep into code
+show what's happening in the database
+show code if there's something noteable you have added to laravel

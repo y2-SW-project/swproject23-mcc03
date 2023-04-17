@@ -84,7 +84,7 @@
                 {{-- forum posts start --}}
                 <div class="bg-orange">
                     <header class="fw-bold fs-3 p-2 mb-0 text-dark">
-                    BEGINNERS</header> 
+                    POSTS</header> 
                 </div> 
             </div> 
         </div>
@@ -104,7 +104,7 @@
             <div class="row align-items-center justify-content-end col-5">
                 <div class="col-3">
                     <div class="d-inline">
-                        <img src="{{asset('storage/profile_pic.jpg')}}" class="img-fluid m-0 p-0" width="50"/>
+                        <img src="{{ asset('storage/' . $post->users->profile_img) }}" class="img-fluid m-0 p-0" width="50"/>
                     </div>
                 </div>
 
@@ -128,9 +128,6 @@
 </div>
 @endforeach
 
-<div class="mt-8"></div>
-
-
 {{-- these are the links for the pagination --}}
 {{-- {{$forum_posts->links()}} --}}
     
@@ -139,7 +136,7 @@
 {{-- container end --}}
 
 {{-- footer --}}
-<div class="container-fluid bg-dark">
+<div class="container-fluid bg-dark mt-8">
     <div class="container-lg">
         <footer class="py-5">
           <div class="row">

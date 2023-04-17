@@ -52,7 +52,6 @@
                   
                     <div class="row">
                       <div class="col">
-
                         {{-- name --}}
                         <div class="row">
                           <div class="col">
