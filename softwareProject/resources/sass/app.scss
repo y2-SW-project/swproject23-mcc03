@@ -26,20 +26,25 @@
 
 .homepage-bg-1 {
     // background: url("/softwareProject/storage/app/public/homepage-rock-1.jpg");
-    background: url("/swproject23-mcc03/softwareProject/public/storage/homepage-rock-1.jpg");
+    background: url("../../public/storage/images/homepage-forum.jpg");
 }
 
 .profile-bg-user {
-    background-image: url("../../storage/app/public/placeholder.svg");
+    background-image: url("../../public/storage/placeholder.svg");
 }
 
 .homepage-bg-2 {
-    background: url("../../storage/app/public/partner.png");
+    background: url("../../public/storage/images/homepage-partner.png");
 }
 
 .homepage-bg-3 {
-    background: url("../../storage/app/public/bg-3.png");
+    background: url("../../public/storage/images/homepage-coach3.png");
 }
+
+.forum-bg {
+    background: url("../../public/storage/images/outdoor2.png");
+}
+
 
 .button-bg {
     color: rgba($color: #ffa500, $alpha: 0)

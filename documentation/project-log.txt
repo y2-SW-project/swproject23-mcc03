@@ -86,12 +86,7 @@ Week11/12:
 -Finishing up and refining areas of the report for the software project
 
 to do:
--Gannt chart?
 -Video demo
--Section 8 GitHub Project
--Flesh out section 2- Market Research
--Move edit button on profile
--Add image upload for profile picture
 
 video:
 don't go too deep into code

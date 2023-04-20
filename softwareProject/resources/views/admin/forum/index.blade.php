@@ -83,7 +83,7 @@
             <div class="mt-6 col-9">
                 {{-- forum posts start --}}
                 <div class="bg-orange">
-                    <header class="fw-bold fs-3 p-2 mb-0 text-dark">
+                    <header class="fw-bold fs-3 p-2 mb-0 text-light">
                     POSTS</header> 
                 </div> 
             </div> 
@@ -104,7 +104,7 @@
             <div class="row align-items-center justify-content-end col-5">
                 <div class="col-3">
                     <div class="d-inline">
-                        <img src="{{ asset('storage/' . $post->users->profile_img) }}" class="img-fluid m-0 p-0" width="50"/>
+                        <img src="{{ asset('storage/images/' . $post->users->profile_img) }}" class="img-fluid m-0 p-0" width="50"/>
                     </div>
                 </div>
 

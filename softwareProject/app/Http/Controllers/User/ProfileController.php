@@ -101,20 +101,24 @@ class ProfileController extends Controller
         $request->validate([
             'name' => 'required|max:50',
             'email' => 'required',
-            'description' => 'required|max:500'
-            // 'profile_img' => 'file|image'
+            'description' => 'required|max:500',
+            'profile_img' => 'file|image'
         ]);
+
+        $profile_img = $request->file('profile_img');
+        $extension = $profile_img->getClientOriginalExtension();
+        //unique filename
+        $filename = $user->id . '_' . $request->name . '.' . $extension;$extension;
+        // stores the file in /pubic/images, and names it $filename
+        $path = $profile_img->storeAs('public/images', $filename);
 
         // specified fields that are to update when submitting forum
         $user->update([
-            // 'profile_img' => $filename,
+            'profile_img' => $filename,
             'name' => $request->name,
             'email' => $request->email,
             'description' => $request->description,
-            // 'rating' => $request->rating
         ]);
-        
-        $user->save();
 
         // after updating the user, it returns to edit view
         return to_route('user.profile.index', $user)->with('success', 'Profile updated successfully');

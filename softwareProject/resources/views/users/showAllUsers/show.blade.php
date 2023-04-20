@@ -13,7 +13,7 @@
                     {{-- displaying users name --}}
                     {{ $user->name }}
                     {{-- user profile picture --}}
-                    <img src="{{ asset('storage/' . $user->profile_img) }}" width="250" alt="User Profile Image">
+                    <img src="{{ asset('storage/images/' . $user->profile_img) }}" width="250" height="250" alt="User Profile Image">
 
                 <div>
                     <div>
@@ -31,8 +31,6 @@
                       @endforeach   
                     </div>
                 </div>
-
-                <button type="button" class="btn bg-orange mt-8"><a href="/user/profile/edit">EDIT</a></button>
             </div>
 
         {{-- contact user button/next user --}}

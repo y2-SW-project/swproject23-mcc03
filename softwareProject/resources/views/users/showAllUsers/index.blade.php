@@ -15,13 +15,11 @@
         <div class="col-4 mb-4">
         
         <div class="card">
-            <p>profile image goes here</p>
-            {{-- <img src="{{asset('storage/profile_pic.jpg')}}" 
-            class="img-responsive img-fluid"/> --}}
+            <img src="{{ asset('storage/images/' . $user->profile_img) }}" width="100" height="100" class="img-fluid m-0 p-0"/>
 
             <div class="card-body">
               <p class="fw-bold">{{$user->name}}</p>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p class="card-text">{{ $user->description }}</p>
               <button class="btn bg-orange btn-outline-dark">
                 <a href="{{ route('users.showAllUsers.show', ['id' => $user]) }}" class="text-dark text-decoration-none fw-semibold">
                   PROFILE</a>

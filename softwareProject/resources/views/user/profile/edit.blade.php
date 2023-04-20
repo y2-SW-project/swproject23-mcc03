@@ -14,9 +14,10 @@
             <div class="e-profile">
               <div class="row">
                 <div class="col-12 col-sm-auto mb-3">
-                  <div class="mx-auto" style="width: 140px;">
-                    <div class="d-flex justify-content-center align-items-center rounded bg-dark" style="height: 140px;">
-                      <span style="color: rgb(166, 168, 170); font: bold 8pt Arial;">140x140</span>
+                  {{-- user profile picture --}}
+                  <div class="mx-auto">
+                    <div class="d-flex justify-content-center align-items-center rounded bg-dark">
+                      <img src="{{ asset('storage/images/' . Auth::user()->profile_img) }}" width="140" height="140" alt="User Profile Image"></span>
                     </div>
                   </div>
                 </div>
@@ -25,10 +26,6 @@
                     <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">{{Auth::user()->name}}</h4>
                     <div class="text-muted"><small>Last seen 2 hours ago</small></div>
                     <div class="mt-2">
-                      <button class="btn btn-orange" type="button">
-                        <i class="fa fa-fw fa-camera"></i>
-                        <span>Change Photo</span>
-                      </button>
                     </div>
                   </div>
                   <div class="text-end text-sm-right">
@@ -49,7 +46,9 @@
                   action="{{route('user.profile.update', ['user', $user]) }}" method="post" enctype="multipart/form-data">
                   @method('put')
                   @csrf
-                  
+                  <label>Profile Picture</label>
+                  <div><input type="file" name="profile_img"></div>
+
                     <div class="row">
                       <div class="col">
                         {{-- name --}}

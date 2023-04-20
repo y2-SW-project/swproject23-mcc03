@@ -11,13 +11,15 @@
       <div class="alert alert-success mt-4">{{ session('success') }}</div>
       @endif
 
+      <button type="button" class="btn bg-blue mt-6"><a href="/user/profile/edit" class="text-decoration-none text-light">EDIT PROFILE</a></button>
+
         <div class="row">
             <div class="col-3">
                 <p class="fs-2 mt-5 mb-0">
                     {{-- displaying users name --}}
                     {{Auth::user()->name}}
                     {{-- user profile picture --}}
-                    <img src="{{ asset('storage/' . Auth::user()->profile_img) }}" width="250" alt="User Profile Image">
+                    <img src="{{ asset('storage/images/' . Auth::user()->profile_img) }}" width="250" height="250" alt="User Profile Image">
                 <div>
                     
                         <div>
@@ -36,8 +38,6 @@
                             
                         </div>
                 </div>
-
-                <button type="button" class="btn bg-orange mt-8"><a href="/user/profile/edit">EDIT</a></button>
             </div>
 
         {{-- contact user button/next user --}}
